@@ -90,7 +90,6 @@ galleryEl.addEventListener("click", onGalleryElClick);
 
 function onGalleryElClick(event) {
   event.preventDefault();
-  console.log(event.target.source);
   if (!event.target.classList.contains("gallery__image")) {
     return;
   }
