@@ -27,6 +27,7 @@ function createGalleryCard(galleryItems) {
 
 galleryEl.addEventListener("click", onGalleryElClick);
 
+
 function onGalleryElClick(event) {
   event.preventDefault();
   if (!event.target.classList.contains("gallery__image")) {
@@ -39,7 +40,16 @@ function onGalleryElClick(event) {
       data-source="${event.target.dataset.source}"
       alt="${event.target.alt}"
     />`
-    );
+  );
+  
   htmlInstance.show();
+
+ window.addEventListener("keydown", onEscKeyPress);
+  function onEscKeyPress(event,) {
+  if (event.code === "Escape") {
+  htmlInstance.close();
+    }
+  };
  
 };
+
