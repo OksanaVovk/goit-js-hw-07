@@ -32,13 +32,18 @@ function onGalleryElClick(event) {
   if (!event.target.classList.contains('gallery__image')) {
     return;
   }
-  const htmlInstance = basicLightbox.create(`
-    <img
+  const htmlInstance = basicLightbox.create(
+    `<img
       class="gallery__image"
       src="${event.target.dataset.source}"
       data-source="${event.target.dataset.source}"
       alt="${event.target.alt}"
-    />`);
+    />`,
+    {
+      onShow: htmlInstance => console.log('onShow', htmlInstance),
+      onClose: htmlInstance => console.log('onClose', htmlInstance),
+    },
+  );
 
   htmlInstance.show();
 
