@@ -40,8 +40,8 @@ function onGalleryElClick(event) {
       alt="${event.target.alt}"
     />`,
     {
-      onShow: htmlInstance => console.log('onShow', htmlInstance),
-      onClose: htmlInstance => console.log('onClose', htmlInstance),
+      onShow: htmlInstance => addEventListener('onShow', htmlInstance),
+      onClose: htmlInstance => removeEventListener('onClose', htmlInstance),
     },
   );
 
